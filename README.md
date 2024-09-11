@@ -1,20 +1,29 @@
-Trie Data Structure
+# Trie (Prefix Tree) Data Structure
 
-The Trie (prefix-tree) is an efficient data structure for storing strings, allowing for efficient searching, insertion, and prefix lookups.
+The **Trie**, or **Prefix Tree**, is a powerful and efficient data structure used for string operations, such as word search, insertion, and prefix matching. It’s perfect for handling large collections of words, making it a great choice for applications like autocomplete, dictionary storage, and spell-checking.
 
-Functions:
+## 🚀 Key Features
 
-- 'insert(word: str)': 
-    -  Inserting a word into the Trie.
-    -  O(n), where n is the length of the word.
+- **Efficient Word Storage:** 
+  Organizes strings by their prefixes, minimizing redundant storage.
+  
+- **Fast Search and Insertion:** 
+  Performs searches, insertions, and prefix lookups in **O(n)** time, where **n** is the length of the input.
 
-- 'search(word: str)': 
-    -  Determining if a word exists in the Trie.
-    -  O(n), where n is the length of the word.
+## ⚙️ Trie Operations
 
-- 'startsWith(prefix: str)': 
-    -  Determines if the prefix of a word exists in the Trie.
-    -  O(p), where p is the length of the prefix.
+1. **`insert(word: str)`**  
+   Adds a word to the Trie.  
+   **Time Complexity:** O(n), where n is the length of the word.
 
-Space complexity:
-    - In the worst case, inserting n words, each of length m can result in O(nm) space.
+2. **`search(word: str)`**  
+   Checks if a word exists in the Trie.  
+   **Time Complexity:** O(n), where n is the length of the word.
+
+3. **`startsWith(prefix: str)`**  
+   Determines if any word in the Trie starts with the given prefix.  
+   **Time Complexity:** O(p), where p is the length of the prefix.
+
+## 🛠️ Space Complexity
+
+In the worst case, inserting **n** words, each of length **m**, results in a space complexity of **O(nm)**.
