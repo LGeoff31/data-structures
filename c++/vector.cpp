@@ -82,6 +82,39 @@ public:
         currentSize--;
     }
 
+    void insert(int index, int value)
+    {
+        if (index < 0 || index >= currentSize)
+        {
+            throw out_of_range("index out of bounds");
+        }
+        if (currentSize == currentCapacity)
+        {
+            resize(2 * currentCapacity);
+        }
+        for (int i = currentSize; i > index; i--)
+        {
+            data[i] = data[i - 1];
+        }
+        data[index] = value;
+        currentSize++;
+    }
+
+    void erase(int index)
+    {
+        if (index < 0 || index >= currentSize)
+        {
+            throw out_of_range("index out of bounds");
+        }
+
+        for (int i = index; i < currentSize - 1; i++)
+        {
+            data[i] = data[i + 1];
+        }
+
+        currentSize--;
+    }
+
     int &operator[](int index)
     {
         if (index < 0 || index >= currentSize)
@@ -89,6 +122,23 @@ public:
             throw out_of_range("Index out of bounds");
         }
         return data[index];
+    }
+
+    int &front()
+    {
+        if (currentSize == 0)
+        {
+            throw out_of_range("Array is empty");
+        }
+        return data[0];
+    }
+    int &back()
+    {
+        if (currentSize == 0)
+        {
+            throw out_of_range("Array is empty");
+        }
+        return data[currentSize - 1];
     }
 
     int size() const
