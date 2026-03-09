@@ -115,6 +115,23 @@ public:
         currentSize--;
     }
 
+    void clear()
+    {
+        currentSize = 0;
+    }
+
+    int find(int value)
+    {
+        for (int i = 0; i < currentSize; i++)
+        {
+            if (data[i] == value)
+            {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     int &operator[](int index)
     {
         if (index < 0 || index >= currentSize)
